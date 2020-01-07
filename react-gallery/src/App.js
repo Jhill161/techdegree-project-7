@@ -33,13 +33,9 @@ class App extends Component {
   componentDidMount(){
     this.getPhoto('cat');
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${'cat'}&per_page=24&format=json&nojsoncallback=1&safe_search=1`)
-              .then( response => {
-                let home = {...this.state.home};
-                    home.photos = response.data.photos.photo;
-                    home.loading = false;
-                    home.title = 'cat';
-                this.setState({ photos:response.data.photos.photo, home })
-              })
+      .then( response => { 
+        this.setState({ photos:response.data.photos.photo})
+      })
   }
 
   // search function to get results from flickr using api
@@ -61,10 +57,10 @@ class App extends Component {
     return (
       <BrowserRouter>
       <div className="container">
-        {/* <Search 
+        <Search 
           onSearch={ this.getPhoto }
           title={ this.state.title }
-        /> */}
+        />
         <Nav/>
         <Gallery data={this.state.photos} />
       </div>

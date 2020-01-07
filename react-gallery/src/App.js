@@ -13,10 +13,9 @@ import {
 import './App.css';
 import Gallery from './components/Gallery';
 import apiKey from './config';
-import Photo from './components/Photo';
 import Nav from './components/Nav';
-import NotFound from './components/NotFound';
 import Search from './components/Search';
+import NotFound from './components/NotFound';
 
 
 class App extends Component {
@@ -26,6 +25,10 @@ class App extends Component {
       title: '',
       photos: [],
       loading: true,
+      home: {
+        photos:[],
+        loading: true,
+      },
     };
   }
 
@@ -34,7 +37,10 @@ class App extends Component {
     this.getPhoto('cat');
     axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${'cat'}&per_page=24&format=json&nojsoncallback=1&safe_search=1`)
       .then( response => { 
-        this.setState({ photos:response.data.photos.photo})
+        let home = {...this.state.home};
+                    home.photos = response.data.photos.photo;
+                    home.loading = false;
+        this.setState({ photos:response.data.photos.photo, home})
       })
   }
 

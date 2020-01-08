@@ -25,10 +25,6 @@ class App extends Component {
       title: '',
       photos: [],
       loading: true,
-      home: {
-        photos:[],
-        loading: true,
-      },
     };
   }
 

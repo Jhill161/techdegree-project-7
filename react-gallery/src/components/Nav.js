@@ -7,9 +7,9 @@ class Nav extends Component {
         return(
             <nav className="main-nav">
                 <ul>
-                <li><NavLink to="/aurora">Aurora</NavLink></li>
-                <li><NavLink to='#' >Dogs</NavLink></li>
-                <li><NavLink to='#' >Computers</NavLink></li>
+                <li><NavLink to="/search/aurora">Aurora</NavLink></li>
+                <li><NavLink to="/search/northern lights">Northern Lights</NavLink></li>
+                <li><NavLink to="/search/snow">Snow</NavLink></li>
                 </ul>
             </nav>
         )

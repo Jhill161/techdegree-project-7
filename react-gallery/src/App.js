@@ -34,14 +34,7 @@ class App extends Component {
 
   //Default render from API of cat photos
   componentDidMount(){
-    this.getPhoto('cat');
-    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${'cat'}&per_page=24&format=json&nojsoncallback=1&safe_search=1`)
-      .then( response => { 
-        let home = {...this.state.home};
-                    home.photos = response.data.photos.photo;
-                    home.loading = false;
-        this.setState({ photos:response.data.photos.photo, home})
-      })
+    this.getPhoto('northern lights');
   }
 
   // search function to get results from flickr using api
@@ -68,7 +61,10 @@ class App extends Component {
           title={ this.state.title }
         />
         <Nav/>
-        <Gallery data={this.state.photos} />
+        <Switch>
+          <Route exact path="/" render={() => <Gallery loading={this.state.loading} data={this.state.photos} /> } />
+          <Route path="/search/:query"  render={ () => <Gallery loading={this.state.loading} data={this.state.photos } /> } />
+        </Switch>
       </div>
       </BrowserRouter>
     )};r

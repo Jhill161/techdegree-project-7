@@ -10,7 +10,6 @@ import Gallery from "./components/Gallery";
 import apiKey from "./config";
 import Nav from "./components/Nav";
 import Search from "./components/Search";
-import NotFound from "./components/NotFound";
 
 class App extends Component {
   constructor() {
@@ -118,7 +117,7 @@ class App extends Component {
               render={() => (
                 <Gallery
                   loading={this.state.home.loading}
-                  title={this.state.home.title}
+                  // title={this.state.home.title}
                   data={this.state.home.photos}
                 />
               )}
@@ -129,7 +128,6 @@ class App extends Component {
               render={() => (
                 <Gallery
                   loading={this.state.aurora.loading}
-                  title={this.state.aurora.title}
                   data={this.state.aurora.photos}
                 />
               )}
@@ -140,7 +138,6 @@ class App extends Component {
               render={() => (
                 <Gallery
                   loading={this.state.snow.loading}
-                  title={this.state.snow.title}
                   data={this.state.snow.photos}
                 />
               )}
@@ -151,7 +148,6 @@ class App extends Component {
               render={() => (
                 <Gallery
                   loading={this.state.alaska.loading}
-                  title={this.state.alaska.title}
                   data={this.state.alaska.photos}
                 />
               )}
@@ -161,7 +157,6 @@ class App extends Component {
               render={() => (
                 <Gallery
                   loading={this.state.loading}
-                  title={this.state.title}
                   data={this.state.photos}
                 />
               )}

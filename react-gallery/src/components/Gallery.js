@@ -23,7 +23,7 @@ const Gallery = props => {
         )
     // If not more than zero result then show <NotFound />  Return div to prevent gallery not loading error
     }else if (props.loading) {
-        return <p>Loading...</p>
+        return <p className="loading">Loading...</p>
     }else {
         photos = <NotFound />
         return (

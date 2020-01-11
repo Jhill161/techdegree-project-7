@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+To run this app you will need a config.js inside /src.  In config.js you will need a variable apiKey = 'Flickr API Key'.  
 ## Available Scripts
 
 In the project directory, you can run:

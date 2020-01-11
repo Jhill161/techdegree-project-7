@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-// App Components
+// App Components //
 
 import "./App.css";
 import Gallery from "./components/Gallery";
